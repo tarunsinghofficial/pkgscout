@@ -25,7 +25,7 @@ npm run try
 
 ```bash
 npx wrangler login
-npx wrangler secret put MCP_TOKEN
+printf %s "$MCP_TOKEN" | npx wrangler secret put MCP_TOKEN   # printf avoids a trailing newline
 npm run deploy
 ```
 

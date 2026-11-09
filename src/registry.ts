@@ -48,7 +48,7 @@ function warningsFor(m: Manifest, weekly: number | null): string[] {
     w.push("npm replaced this package with a security placeholder. The original was likely malicious. Do not install.");
   }
   if (m.deprecated) w.push(`Deprecated: ${m.deprecated}`);
-  if (weekly !== null && weekly < 1000) w.push(`Only ${weekly} downloads last week.`);
+  if (weekly !== null && weekly < 1000) w.push(`Only ${weekly} download${weekly === 1 ? "" : "s"} last week.`);
   if (!m.repository) w.push("No source repository listed.");
   return w;
 }
